@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "e2c3e8e1-dc87-4447-b6be-2e03b283970e",
+		"name": "Backend_Nutech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30319046"
+	},
+	"item": [
+		{
+			"name": "Membership",
+			"item": [
+				{
+					"name": "/registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n  \"email\": \"user10@nutech-integrasi.com\",\r\n  \"first_name\": \"User\",\r\n  \"last_name\": \"Nutech\",\r\n  \"password\": \"abcdef1234\"\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/registration",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n \"email\": \"user@nutech-integrasi.com\",\r\n \"password\": \"abcdef1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbnV0ZWNoLWludGVncmFzaS5jb20iLCJpYXQiOjE3MDg5NTgwNjUsImV4cCI6MTcwOTAwMTI2NX0.pqt7ujEL2wRaK9e-5TyJc8nCIMg95NS_NRBG3vGx2og",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization-nutech",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ3ZDQyZTk4LTE0NTQtNGQ5ZC04MGYxLWM3MjU5MTM4NjU0MCIsImVtYWlsIjoidXNlckBudXRlY2gtaW50ZWdyYXNpLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NzQwMTg2fQ.HLh94I4_razVn2g-xvm1EP-M-LXp8EgQM1y3oVZYqxY",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/profile/update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbnV0ZWNoLWludGVncmFzaS5jb20iLCJpYXQiOjE3MDg5MzU5OTYsImV4cCI6MTcwODk3OTE5Nn0.2B4BP9s6-EG8ZT7nL56F99nheQUuIdtULahBBOFTXY0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization-nutech",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ3ZDQyZTk4LTE0NTQtNGQ5ZC04MGYxLWM3MjU5MTM4NjU0MCIsImVtYWlsIjoidXNlckBudXRlY2gtaW50ZWdyYXNpLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NzQwMTg2fQ.HLh94I4_razVn2g-xvm1EP-M-LXp8EgQM1y3oVZYqxY",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"first_name\": \"User Edited\",\r\n  \"last_name\": \"Nutech Edited\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/profile/update",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"profile",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/profile/image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbnV0ZWNoLWludGVncmFzaS5jb20iLCJpYXQiOjE3MDg5MzU5OTYsImV4cCI6MTcwODk3OTE5Nn0.2B4BP9s6-EG8ZT7nL56F99nheQUuIdtULahBBOFTXY0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization-nutech",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ3ZDQyZTk4LTE0NTQtNGQ5ZC04MGYxLWM3MjU5MTM4NjU0MCIsImVtYWlsIjoidXNlckBudXRlY2gtaW50ZWdyYXNpLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzA4NzQwMTg2fQ.HLh94I4_razVn2g-xvm1EP-M-LXp8EgQM1y3oVZYqxY",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profile_image",
+									"type": "file",
+									"src": "/D:/CI4/NiceAdmin/assets/img/news-5.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/api/profile/image",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"profile",
+								"image"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Information",
+			"item": [
+				{
+					"name": "/banner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/banner",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"banner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/services",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbnV0ZWNoLWludGVncmFzaS5jb20iLCJpYXQiOjE3MDg5NTgwNjUsImV4cCI6MTcwOTAwMTI2NX0.pqt7ujEL2wRaK9e-5TyJc8nCIMg95NS_NRBG3vGx2og",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/services",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"services"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "/balance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbnV0ZWNoLWludGVncmFzaS5jb20iLCJpYXQiOjE3MDg5NTgwNjUsImV4cCI6MTcwOTAwMTI2NX0.pqt7ujEL2wRaK9e-5TyJc8nCIMg95NS_NRBG3vGx2og",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/balance",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"balance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/transaction/history",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbnV0ZWNoLWludGVncmFzaS5jb20iLCJpYXQiOjE3MDg5NTgwNjUsImV4cCI6MTcwOTAwMTI2NX0.pqt7ujEL2wRaK9e-5TyJc8nCIMg95NS_NRBG3vGx2og",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/transaction/history",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"transaction",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/topup",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbnV0ZWNoLWludGVncmFzaS5jb20iLCJpYXQiOjE3MDg5NTgwNjUsImV4cCI6MTcwOTAwMTI2NX0.pqt7ujEL2wRaK9e-5TyJc8nCIMg95NS_NRBG3vGx2og",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"top_up_amount\": 10000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/topup",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"topup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/transaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbnV0ZWNoLWludGVncmFzaS5jb20iLCJpYXQiOjE3MDg5NTgwNjUsImV4cCI6MTcwOTAwMTI2NX0.pqt7ujEL2wRaK9e-5TyJc8nCIMg95NS_NRBG3vGx2og",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"service_code\": \"PAJAK\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/transaction",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
